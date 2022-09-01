@@ -61,3 +61,6 @@ install(TARGETS ${installable_libs}
         EXPORT MathFunctionsTargets
         DESTINATION lib)
 install(FILES MathFunctions.h DESTINATION include)
+
+set_property(TARGET MathFunctions PROPERTY VERSION "1.0.0")
+set_property(TARGET MathFunctions PROPERTY SOVERSION "1")
