@@ -1,0 +1,4 @@
+// the configured options and settings for Calculator
+#define Calculator_VERSION_MAJOR @Calculator_VERSION_MAJOR@
+#define Calculator_VERSION_MINOR @Calculator_VERSION_MINOR@
+#cmakedefine USE_CALCULATOR
