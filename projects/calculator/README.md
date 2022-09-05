@@ -22,7 +22,16 @@ and use CMake to build && package it.
 
 i use `clang-format` to format these files.
 
+With `Windows for Linux` --- Ubuntu
+
 ```bash
 $ clang-format --version
 clang-format version 10.0.0-4ubuntu1
+```
+
+With `macOS`
+
+```bash
+$ clang-format --version
+clang-format version 14.0.1
 ```
