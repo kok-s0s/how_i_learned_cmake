@@ -1,6 +1,6 @@
 # A Simple Calculator
 
-i will use c-plus-lus to make it.
+i will use c-plus-plus to make it.
 
 and use CMake to build && package it.
 
