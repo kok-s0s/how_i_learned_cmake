@@ -14,7 +14,6 @@ using std::string;
 void showConfig(char *);
 
 int main(int argc, char *argv[]) {
-
 #ifdef USE_CALCULATOR
   string infix = "";
 
@@ -24,8 +23,7 @@ int main(int argc, char *argv[]) {
   while (true) {
     cout << ">>> ";
     getline(std::cin, infix);
-    if (infix == "exit")
-      break;
+    if (infix == "exit") break;
     trim(infix);
     handle(infix);
   }

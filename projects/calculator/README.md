@@ -35,3 +35,9 @@ With `macOS`
 $ clang-format --version
 clang-format version 14.0.1
 ```
+
+i choose to use Google Style!
+
+```bash
+$ clang-format -style=google -dump-config > .clang-format
+```
