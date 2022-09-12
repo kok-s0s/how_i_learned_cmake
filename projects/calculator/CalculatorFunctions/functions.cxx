@@ -129,9 +129,12 @@ void handle(string infix) {
         nums.push(a - b);
       else if (curStr == "*")
         nums.push(a * b);
-      else if (curStr == "/")
+      else if (curStr == "/" && b != 0)
         nums.push(a / b);
-      else if (curStr == "**")
+      else if (curStr == "/" && b == 0) {
+        cout << "Divided by zero is not allowed!" << endl;
+        return;
+      } else if (curStr == "**")
         nums.push(pow(a, b));
       else if (curStr == "%")
         nums.push((int)a % (int)b);
