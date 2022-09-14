@@ -22,7 +22,7 @@ and use CMake to build && package it.
 
 i use `clang-format` to format these files.
 
-With `Windows for Linux` --- Ubuntu
+With `Windows Subsystem for Linux` --- Ubuntu
 
 ```bash
 $ clang-format --version
