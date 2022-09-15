@@ -59,7 +59,7 @@ void handle(string infix) {
                (*ch == '-' && *(ch - 1) == '(' && isdigit(*(ch + 1)))) {
       string temp;
       temp.push_back(*ch);
-      while (isdigit(*(ch + 1))) {
+      while (isdigit(*(ch + 1)) || *(ch + 1) == '.') {
         ch++;
         temp.push_back(*ch);
       }
@@ -67,7 +67,7 @@ void handle(string infix) {
     } else if (isdigit(*ch)) {
       string temp;
       temp.push_back(*ch);
-      while (isdigit(*(ch + 1))) {
+      while (isdigit(*(ch + 1)) || *(ch + 1) == '.') {
         ch++;
         temp.push_back(*ch);
       }
