@@ -23,7 +23,14 @@ int main(int argc, char *argv[]) {
   while (true) {
     cout << ">>> ";
     getline(std::cin, infix);
-    if (infix == "exit") break;
+    if (infix == "")
+      continue;
+    else if (infix == "cls" || infix == "clear") {
+      cout << "\033[2J\033[1;1H";
+      sayHi();
+      continue;
+    } else if (infix == "exit")
+      break;
     trim(infix);
     handle(infix);
   }
