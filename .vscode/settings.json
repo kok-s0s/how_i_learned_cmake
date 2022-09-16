@@ -1,5 +1,8 @@
 {
   "cmake.configureOnOpen": false,
   "C_Cpp.errorSquiggles": "Disabled",
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "workbench.colorTheme": "Sapphire (Bright)",
+  "editor.minimap.enabled": false,
+  "explorer.openEditors.visible": 0
 }
