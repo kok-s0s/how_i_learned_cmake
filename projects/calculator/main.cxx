@@ -1,5 +1,7 @@
 #include <cstring>
 #include <iostream>
+#include <limits>
+#include <queue>
 
 #include "CalculatorConfig.h"
 
@@ -9,12 +11,20 @@
 
 using std::cout;
 using std::endl;
+using std::queue;
 using std::string;
+
+struct historyUnit {
+  string infix;
+  double result;
+};
 
 void showConfig(char *);
 
 int main(int argc, char *argv[]) {
 #ifdef USE_CALCULATOR
+  queue<historyUnit> historys;
+  int curIndex = 0;
   string infix = "";
 
   sayHi();
@@ -32,7 +42,19 @@ int main(int argc, char *argv[]) {
     } else if (infix == "exit")
       break;
     trim(infix);
-    handle(infix);
+    historyUnit temp;
+    handle(infix, temp.result);
+    if (temp.result != std::numeric_limits<double>::max()) {
+      temp.infix = infix;
+      historys.push(temp);
+      curIndex++;
+      if (curIndex > 10) {
+        historys.pop();
+        curIndex--;
+      }
+    }
+    cout << "curFrontInfix: " << historys.front().infix << endl;
+    cout << "curFrontResult: " << historys.front().result << endl;
   }
 
   sayBye();

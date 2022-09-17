@@ -45,7 +45,7 @@ int priority(string operatorStr) {
   return 0;
 }
 
-void handle(string infix) {
+void handle(string infix, double &result) {
   queue<string> postfix;
   stack<string> helper;
   stack<double> nums;
@@ -84,6 +84,7 @@ void handle(string infix) {
     } else if (isalpha(*ch)) {
       cout << "Arithmetic expressions do not allow letters, please try again!"
            << endl;
+      result = std::numeric_limits<double>::max();
       return;
     } else {
       string temp;
@@ -133,6 +134,7 @@ void handle(string infix) {
         nums.push(a / b);
       else if (curStr == "/" && b == 0) {
         cout << "Divided by zero is not allowed!" << endl;
+        result = std::numeric_limits<double>::max();
         return;
       } else if (curStr == "**")
         nums.push(pow(a, b));
@@ -141,6 +143,7 @@ void handle(string infix) {
       else {
         cout << "There is an invalid operator [" << curStr
              << "], please try again" << endl;
+        result = std::numeric_limits<double>::max();
         return;
       }
     }
@@ -148,10 +151,12 @@ void handle(string infix) {
     postfix.pop();
   }
 
-  if (nums.size() == 1)
+  if (nums.size() == 1) {
     cout << nums.top() << endl;
-  else {
+    result = nums.top();
+  } else {
     cout << "Incorrect expression entered, please try again!" << endl;
+    result = std::numeric_limits<double>::max();
     return;
   }
 }
